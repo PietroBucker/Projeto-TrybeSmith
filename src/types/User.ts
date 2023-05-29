@@ -5,3 +5,8 @@ export type User = {
   level: number;
   password: string;
 };
+
+export type UserDecoded = {
+  username: string;
+  password: string;
+};

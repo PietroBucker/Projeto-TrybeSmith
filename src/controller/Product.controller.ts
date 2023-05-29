@@ -10,7 +10,10 @@ async function findAll(_req: Request, res: Response): Promise<Response> {
 async function insert(req: Request, res: Response): Promise<Response> {
   const { body } = req;
   const response = await ProductService.insert(body);
-  return res.status(mapStatusHTTP(response.status)).json(response.message);
+  if (response.status === 'CREATED') {
+    return res.status(mapStatusHTTP(response.status)).json(response.message);
+  }
+  return res.status(mapStatusHTTP(response.status)).json({ message: response.message });
 }
 
 export default {

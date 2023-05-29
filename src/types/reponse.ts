@@ -1,4 +1,5 @@
-type ServiceResponseErroType = 'NOT_FOUND';
+type ServiceResponseErroType = 'NOT_FOUND' 
+| 'UNAUTHORIZED' | 'INVALID_DATA' | 'UNPROCESSABLE_CONTENT';
 type ServiceResponseSuccessType = 'SUCCESS' | 'CREATED';
 
 type ServiceResponseErro = {
