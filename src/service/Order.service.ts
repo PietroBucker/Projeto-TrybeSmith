@@ -51,6 +51,12 @@ async function findAll(): Promise<ServiceResponse<OrderOpt[]>> {
 //   return { status: 'SUCCESS', message: createdOrder.dataValues };
 // }
 
+// const newOrder = await OrderModel.create({ userId });
+// await ProductModel.update(
+//   { orderId: newOrder.dataValues.id },
+//   { where: { id: { [Op.in]: productIds } } },
+// );
+
 export default {
   findAll,
   // insert,
