@@ -3,8 +3,11 @@ import LoginService from '../service/Login.service';
 import mapStatusHTTP from '../utils/mapStatusHTTP';
 
 async function login(req: Request, res: Response): Promise<Response> {
-  const { body } = req;
-  const response = await LoginService.login(body);
+  const { username, password } = req.body;
+  // console.log('controler body', body);
+  console.log('controler username', username);
+  
+  const response = await LoginService.login({ username, password });
   if (response.status === 'SUCCESS') {
     return res.status(mapStatusHTTP(response.status)).json({ token: response.message });
   }
